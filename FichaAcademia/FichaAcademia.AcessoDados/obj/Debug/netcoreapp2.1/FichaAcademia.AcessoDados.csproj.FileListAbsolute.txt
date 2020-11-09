@@ -1,0 +1,12 @@
+C:\Users\falea\Documents\FichaAcademia\FichaAcademia.AcessoDados\bin\Debug\netcoreapp2.1\FichaAcademia.Dominio.dll
+C:\Users\falea\Documents\FichaAcademia\FichaAcademia.AcessoDados\obj\Debug\netcoreapp2.1\FichaAcademia.AcessoDados.csprojAssemblyReference.cache
+C:\Users\falea\Documents\FichaAcademia\FichaAcademia.AcessoDados\obj\Debug\netcoreapp2.1\FichaAcademia.AcessoDados.csproj.CoreCompileInputs.cache
+C:\Users\falea\Documents\FichaAcademia\FichaAcademia.AcessoDados\obj\Debug\netcoreapp2.1\FichaAcademia.AcessoDados.AssemblyInfoInputs.cache
+C:\Users\falea\Documents\FichaAcademia\FichaAcademia.AcessoDados\obj\Debug\netcoreapp2.1\FichaAcademia.AcessoDados.AssemblyInfo.cs
+C:\Users\falea\Documents\FichaAcademia\FichaAcademia.AcessoDados\bin\Debug\netcoreapp2.1\FichaAcademia.AcessoDados.deps.json
+C:\Users\falea\Documents\FichaAcademia\FichaAcademia.AcessoDados\bin\Debug\netcoreapp2.1\FichaAcademia.AcessoDados.dll
+C:\Users\falea\Documents\FichaAcademia\FichaAcademia.AcessoDados\bin\Debug\netcoreapp2.1\FichaAcademia.AcessoDados.pdb
+C:\Users\falea\Documents\FichaAcademia\FichaAcademia.AcessoDados\bin\Debug\netcoreapp2.1\FichaAcademia.Dominio.pdb
+C:\Users\falea\Documents\FichaAcademia\FichaAcademia.AcessoDados\obj\Debug\netcoreapp2.1\FichaAcademia.AcessoDados.csproj.CopyComplete
+C:\Users\falea\Documents\FichaAcademia\FichaAcademia.AcessoDados\obj\Debug\netcoreapp2.1\FichaAcademia.AcessoDados.dll
+C:\Users\falea\Documents\FichaAcademia\FichaAcademia.AcessoDados\obj\Debug\netcoreapp2.1\FichaAcademia.AcessoDados.pdb
