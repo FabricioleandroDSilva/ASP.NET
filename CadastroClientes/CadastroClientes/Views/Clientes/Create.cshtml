@@ -1,0 +1,175 @@
+﻿@model CadastroCliente.Models.Cliente
+
+
+@{
+    ViewData["Title"] = "Novo Cliente";
+}
+
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group col s12">
+                    <label asp-for="Nome" class="control-label"></label>
+                    <input asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col s2">
+                    <label asp-for="DataNascimento" class="control-label">Data de Nascimento</label>
+                    <input asp-for="DataNascimento" class="form-control datepicker" type="text" />
+                    <span asp-validation-for="DataNascimento" class="text-danger"></span>
+                </div>
+                <div class="form-group col s08">
+                    <label asp-for="Sexo" class="control-label"></label>
+                    <input asp-for="Sexo" class="form-control"placeholder="M - Masculino e F - Feminino" />
+                    <span asp-validation-for="Sexo" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group col s2">
+                    <label asp-for="Cep" id="cep" class="control-label"></label>
+                    <input asp-for="Cep" class="form-control " pattern="[0-9]+$" />
+                    <span asp-validation-for="Cep" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group col s10">
+                    <label asp-for="Endereço" id="rua" class="control-label"></label>
+                    <input asp-for="Endereço" id="endereco" class="form-control" />
+                    <span asp-validation-for="Endereço" class="text-danger"></span>
+                </div>
+                <div class="form-group col s1">
+                    <label asp-for="Numero" class="control-label"></label>
+                    <input asp-for="Numero" class="form-control" />
+                    <span asp-validation-for="Numero" class="text-danger"></span>
+                </div>
+                <div class="form-group col s12">
+                    <label asp-for="Complemento" class="control-label"></label>
+                    <input asp-for="Complemento" class="form-control" />
+                    <span asp-validation-for="Complemento" class="text-danger"></span>
+                </div>
+                <div class="form-group col s10">
+                    <label asp-for="Bairro" class="control-label"></label>
+                    <input asp-for="Bairro" id="bairro" class="form-control" />
+                    <span asp-validation-for="Bairro" class="text-danger"></span>
+                </div>
+                <div class="form-group col s1">
+                    <label asp-for="Estado" class="control-label"></label>
+                    <input asp-for="Estado" id="uf" class="form-control" />
+                    <span asp-validation-for="Estado" class="text-danger"></span>
+                </div>
+                <div class="form-group col s04">
+                    <label asp-for="Cidade" class="control-label"></label>
+                    <input asp-for="Cidade" id="cidade" class="form-control" />
+                    <span asp-validation-for="Cidade" class="text-danger"></span>
+                </div>
+               
+                <div class="form-group col s12">
+                    <input type="submit" value="Salvar" class="btn-small" />
+                    <a asp-action="Index" class="btn-small blue darken-3">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(document).ready(function () {
+            $('.datepicker').datepicker({
+                autoclose: true,
+                format: 'dd/mm/yyyy',
+                defaultDate: new Date(),
+                setDefaultDate: true,
+                disableWeekends: false,
+                showDaysInNextAndPreviousMonths: true,
+                showMonthAfterYear: true,
+                firstDay: 0,
+                showClearBtn: true,
+                i18n: {
+                    cancel: 'Cancelar',
+                    clear: 'Limpar',
+                    done: 'Ok',
+                    previousMonth: '‹',
+                    nextMonth: '›',
+                    months: [
+                        'Janeiro',
+                        'Fevereiro',
+                        'Março',
+                        'Abril',
+                        'Maio',
+                        'Junho',
+                        'Julho',
+                        'Agosto',
+                        'Setembro',
+                        'Outubro',
+                        'Novembro',
+                        'Dezembro'
+                    ],
+                    monthsShort: [
+                        'Jan',
+                        'Fev',
+                        'Mar',
+                        'Abr',
+                        'Mai',
+                        'Jun',
+                        'Jul',
+                        'Ago',
+                        'Set',
+                        'Out',
+                        'Nov',
+                        'Dez'
+                    ],
+                    weekdays: [
+                        'Domingo',
+                        'Segunda-feira',
+                        'Terça-feira',
+                        'Quarta-feira',
+                        'Quinta-feira',
+                        'Sexta-feira',
+                        'Sábado'
+                    ],
+                    weekdaysShort: [
+                        'Dom',
+                        'Seg',
+                        'Ter',
+                        'Qua',
+                        'Qui',
+                        'Sex',
+                        'Sab'
+                    ],
+                    weekdaysAbbrev: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
+                }
+            });
+
+            $("#Cep").blur(function () {
+                var cep_code = $(this).val();
+                if (cep_code != "") {
+                    $.getJSON("https://viacep.com.br/ws/" + cep_code + "/json/?callback=?", function (item) {
+
+                        $("#cidade").val(item.localidade);
+                        $("#uf").val(item.uf);
+                        $("#endereco").val(item.logradouro);
+                        $("#bairro").val(item.bairro);
+
+                    });
+                }
+            });
+
+
+
+        });
+
+
+
+    </script>
+
+
+}
+
+
